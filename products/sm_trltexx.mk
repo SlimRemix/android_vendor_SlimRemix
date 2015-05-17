@@ -59,7 +59,7 @@ ifeq ($(strip $(ENABLE_STRICT_ALIASING)),true)
            -Werror=strict-aliasing
 
   # Enable strict-aliasing kernel flags
-#export CONFIG_MACH_APQ8084_TRLTE_STRICT_ALIASING := y
+#export CONFIG_ARCH_APQ8084_TRLTE_STRICT_ALIASING := y
 #LOCAL_DISABLE_STRICT_ALIASING := \
    #libmmcamera_interface\
    #camera.hammerhead
