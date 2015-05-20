@@ -30,11 +30,11 @@ endif
 ifndef TARGET_SM_AND
   $(warning ********************************************************************************)
   $(warning *  TARGET_SM_AND not defined.)
-  $(warning *  Defaulting to gcc 4.8 for ROM.)
+  $(warning *  Defaulting to gcc 4.9 for ROM.)
   $(warning *  To change this set TARGET_SM_AND in device makefile before this file is called.)
-  $(warning *  This is required for arm64 devices for the kernel TARGET_SM_KERNEL := SM-4.9)
+  $(warning *  This is required for arm64 devices for the kernel TARGET_SM_KERNEL := 4.9)
   $(warning ********************************************************************************)
-  TARGET_SM_AND := 4.8
+  export TARGET_SM_AND := 4.9
 endif
 
 ifdef TARGET_SM_KERNEL
@@ -96,7 +96,7 @@ ifeq ($(strip $(HOST_OS)),linux)
   ifneq ($(filter arm arm64,$(TARGET_ARCH)),)
     ifeq ($(strip $(TARGET_ARCH)),arm)
 
-      TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_SM_AND)/lib
+export TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_SM_AND)/lib
 
       # Path to ROM toolchain
       SM_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_SM_AND)
@@ -201,7 +201,7 @@ ifeq ($(strip $(HOST_OS)),linux)
 
     ifeq ($(strip $(TARGET_ARCH)),arm64)
 
-      TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_SM_AND)/lib
+export TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_SM_AND)/lib
 
       # Path to toolchain
       SM_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_SM_AND)

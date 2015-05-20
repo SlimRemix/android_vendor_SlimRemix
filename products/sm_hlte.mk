@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-#
-# Target arch is arm
-TARGET_ARCH := arm
 
 # Find host os
 UNAME := $(shell uname -s)
@@ -27,6 +24,7 @@ endif
 ifeq ($(strip $(HOST_OS)),linux)
 
   # Sabermod configs
+  TARGET_ARCH := arm
   TARGET_NDK_VERSION := 4.9
   TARGET_SM_AND := 4.9
   TARGET_SM_KERNEL := 4.9
@@ -57,6 +55,7 @@ ifeq ($(strip $(ENABLE_STRICT_ALIASING)),true)
   # strict-aliasing kernel flags
   export KERNEL_STRICT_FLAGS := \
            -fstrict-aliasing \
+           -Wstrict-aliasing=3 \
            -Werror=strict-aliasing
 
   # Enable strict-aliasing kernel flags

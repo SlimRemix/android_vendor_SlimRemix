@@ -23,7 +23,8 @@ $(shell unset GRAPHITE_UNROLL_AND_JAM)
 $(shell unset LD_LIBRARY_PATH)
 $(shell unset LIBRARY_PATH)
 $(shell unset ENABLE_PTHREAD)
-
+$(shell unset TARGET_SM_AND)
+$(shell unset TARGET_ARCH_LIB_PATH)
 
 #ifeq (cmremix_hlte,$(TARGET_PRODUCT))
   #$(shell unset CONFIG_MACH_MSM8974_HLTE_STRICT_ALIASING)
