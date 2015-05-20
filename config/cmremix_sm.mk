@@ -597,7 +597,7 @@ endif
 
 OPT3 := (extra)
 OPT6 := (memory-sanitizer)
-Opt7 := (OpenMP)
+OPT7 := (OpenMP)
 
 GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT4)$(OPT5)$(OPT6)$(OPT7)
 ifneq ($(GCC_OPTIMIZATION_LEVELS),)
