@@ -3,10 +3,9 @@
 PRODUCT_PACKAGES += \
     OmniSwitch
 
-# cmRemiX OTA
+# CMRemixOTA
 PRODUCT_PACKAGES += \
-    CMRemixUpdater \
-    CMRemixCenter
+    CMRemixOTA
 
 # slim Apps
 PRODUCT_PACKAGES += \
