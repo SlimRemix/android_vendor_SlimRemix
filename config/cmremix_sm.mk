@@ -443,7 +443,16 @@ ifeq ($(strip $(ENABLE_STRICT_ALIASING)),true)
     mdnsd \
     libuclibcrpc \
     busybox \
-    libfdlibm
+    libfdlibm \
+    libwebviewchromium \
+    libwebviewchromium_loader \
+    libwebviewchromium_plat_support \
+    content_content_renderer_gyp \
+    third_party_WebKit_Source_modules_modules_gyp \
+    third_party_WebKit_Source_platform_blink_platform_gyp \
+    third_party_WebKit_Source_core_webcore_remaining_gyp \
+    third_party_angle_src_translator_lib_gyp \
+    third_party_WebKit_Source_core_webcore_generated_gyp
 
   # Check if there's already something set in a device make file somewhere.
   ifndef LOCAL_DISABLE_STRICT_ALIASING
