@@ -103,8 +103,8 @@ def add_to_manifest(repositories):
     f.close()
 
 def fetch_dependencies(device):
-#    print 'Looking for cmRemiX product dependencies'
-    dependencies_path = 'vendor/cmremix/dependencies/' + device + '.dependencies'
+#    print 'Looking for SlimRemix product dependencies'
+    dependencies_path = 'vendor/slimremix/dependencies/' + device + '.dependencies'
 
     syncable_repos = []
 

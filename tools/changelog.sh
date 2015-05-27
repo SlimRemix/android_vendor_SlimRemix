@@ -13,7 +13,7 @@ else
   export d=`date +"%y%m%d"`
   logd=`date +"%m%d%y"`
 fi
-export CHANGELOGOUT=$ANDROID_BUILD_TOP/CHANGELOGS/cmremix_$logd
+export CHANGELOGOUT=$ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd
 echo "" > $CHANGELOGOUT
 ln -sf $CHANGELOGOUT $ANDROID_BUILD_TOP/CHANGES.LOG
 getbranch()
@@ -31,8 +31,8 @@ repo forall -c 'bash <<'\''EOF'\''
     prev=`git tag | sort -uh | grep -x "[0-9][0-9]*" | grep -v "$d"  | tail -n 1`
     if [ $prev ] && [ `echo $prev | wc -w` -eq 1 ]; then
       lastversion="$prev"
-    elif [ `git tag | sort -uh | grep cmremix_ | wc -l` -gt 0 ]; then
-      lastversion="`git tag | sort -uh | grep cmremix_ | tail -n 1`"
+    elif [ `git tag | sort -uh | grep slimremix_ | wc -l` -gt 0 ]; then
+      lastversion="`git tag | sort -uh | grep slimremix_ | tail -n 1`"
     else
       lastversion=m/$version
     fi
@@ -59,5 +59,5 @@ repo forall -c 'bash <<'\''EOF'\''
   git tag $d
 EOF
 '
-cp $ANDROID_BUILD_TOP/CHANGELOGS/cmremix_$logd $OUT/system/etc/CHANGELOG-cmR.txt
-cp $ANDROID_BUILD_TOP/CHANGELOGS/cmremix_$logd $OUT/Changelog.txt
+cp $ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd $OUT/system/etc/CHANGELOG-cmR.txt
+cp $ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd $OUT/Changelog.txt

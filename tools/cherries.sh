@@ -7,7 +7,7 @@
 #    AOKP - Android Open Kang Project
 #    AOSP - Android Open Source Project
 #    CM   - CyanogenMod
-#    CMREMIX  - cmremix-rom
+#    CMREMIX  - slimremix-rom
 #    PA   - Paranoid Android (AOSPA)
 #
 #  in addition, cherry-pick patch files can be created for commits that aren't
@@ -26,13 +26,13 @@
 #
 #    For gerrit commits, add the cherry-pick(s) in the form:
 #      cherries+=(GERRIT-COMMIT#_GERRIT-ACCOUNT)
-#     e.g. http://review.cmremix-rom.com/#/c/250/2/tools/cherries.sh would be cherries+=(250_CMREMIX)
+#     e.g. http://review.slimremix-rom.com/#/c/250/2/tools/cherries.sh would be cherries+=(250_CMREMIX)
 #        |
 #      <Repeat for each separate cherry-pick>
 #
 #    For gerrit topics, add the topics(s) in the form:
 #      topics+=(TOPIC_GERRIT-ACCOUNT)
-#     e.g. http://review.cmremix-rom.com/#/q/topic:CREncoder would be topics+=(CREncoder_CMREMIX)
+#     e.g. http://review.slimremix-rom.com/#/q/topic:CREncoder would be topics+=(CREncoder_CMREMIX)
 #        |
 #      <Repeat for each separate topic>
 #
@@ -40,7 +40,7 @@
 #  On-line patches can be called by specifying a URL as the PATCH variable and calling the
 #  patch_it function with the parameter 'true', i.e., patch_it true
 #
-#  Any patches stored in the vendor/cmremix/tool/patches folder must have a .patch extension
+#  Any patches stored in the vendor/slimremix/tool/patches folder must have a .patch extension
 #  with a prefix name that exactly matches the PATCH name.  See below for examples.
 #  All patches must be in the git format-patch email format for use by git am
 #  Create a patch for the latest or last n patches with this command
@@ -56,7 +56,7 @@ device=$1
 BASEDIR=$PWD
 
 # colors
-. $BASEDIR/vendor/cmremix/tools/colors
+. $BASEDIR/vendor/slimremix/tools/colors
 
 function patch_it {
   cd $BASEDIR/${FOLDER}
@@ -73,10 +73,10 @@ function patch_it {
    fi
 
   else
-   THISCOMMIT=$(cat $BASEDIR/vendor/cmremix/tools/patches/${PATCH}.patch | sed -n '4,4p')
+   THISCOMMIT=$(cat $BASEDIR/vendor/slimremix/tools/patches/${PATCH}.patch | sed -n '4,4p')
 
    if [ "$LASTCOMMIT" != "$THISCOMMIT" ] ; then  #Patch if not already applied
-    git am $BASEDIR/vendor/cmremix/tools/patches/${PATCH}.patch
+    git am $BASEDIR/vendor/slimremix/tools/patches/${PATCH}.patch
    else
     echo -e "skipped $(echo $THISCOMMIT | sed -r 's/^.{9}//')"
    fi
@@ -116,19 +116,19 @@ case $device in
     ;;
     s2ve | s2vep)
         # av patch
-        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/cmremix/0001-FRAMEWORKS-AV-PATCH-for-s2ve-s2vep-device.patch"
+        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/slimremix/0001-FRAMEWORKS-AV-PATCH-for-s2ve-s2vep-device.patch"
         FOLDER=frameworks/av
         patch_it true
         # native patch
-        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/cmremix/0001-FRAMEWORKS-NATIVE-PATCH-for-s2ve-s2vep-device.patch"
+        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/slimremix/0001-FRAMEWORKS-NATIVE-PATCH-for-s2ve-s2vep-device.patch"
         FOLDER=frameworks/native
         patch_it true
         # bluetooth patch
-        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/cmremix/0001-Add-BT-support-for-s2ve-s2vep.patch"
+        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/slimremix/0001-Add-BT-support-for-s2ve-s2vep.patch"
         FOLDER=hardware/broadcom/libbt
         patch_it true
         # hwc patch
-        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/cmremix/0001-Fix-HWC-for-s2ve-s2vep.patch"
+        PATCH="https://raw.githubusercontent.com/luk1337/build_tools/slimremix/0001-Fix-HWC-for-s2ve-s2vep.patch"
         FOLDER=external/chromium_org
         patch_it true
     ;;
@@ -153,7 +153,7 @@ case $device in
     tenderloin)
         # btservice/AdaperState: handle ENABLED_READY in OffState
         PATCH=tenderloin_13-11-25_btservice-AdaperState-handle-ENABLED_READY
-        FOLDER=cmremixkages/apps/Bluetooth
+        FOLDER=slimremixkages/apps/Bluetooth
         patch_it #add this function call for each patch
         # Only-read-next-buffer-if-current-buffer-is-not-empty
         PATCH=tenderloin_Only-read-next-buffer-if-current-buffer-is-not-empty

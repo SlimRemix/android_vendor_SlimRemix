@@ -1,44 +1,38 @@
 [
   {
-    "account":      "CMRemix",
+    "account":      "SlimRemix",
     "repository":   "android_kernel_samsung_trlte",
     "target_path":  "kernel/samsung/trlte",
-    "revision":     "cm-12.1-spr"
+    "revision":     "lp5.1-spr"
   },
   {
-    "account":      "CMRemix",
+    "account":      "SlimRemix",
     "repository":   "android_device_samsung_trltespr",
     "target_path":  "device/samsung/trltespr",
-    "revision":     "cm-12.1"
+    "revision":     "lp5.1"
   },
   {
-    "account":      "CMRemix",
+    "account":      "SlimRemix",
     "repository":   "android_device_samsung_trlte-common",
     "target_path":  "device/samsung/trlte-common",
-    "revision":     "cm-12.1"
+    "revision":     "lp5.1"
   },
   {
-    "account":      "CMRemix",
+    "account":      "SlimRemix",
     "repository":   "android_hardware_samsung",
     "target_path":  "hardware/samsung",
-    "revision":     "cm-12.1"
+    "revision":     "lp5.1"
   },
   {
-    "account":      "CMRemix",
-    "repository":   "android_device_qcom_common",
-    "target_path":  "device/qcom/common",
-    "revision":     "cm-12.1"
-  },
-  {
-    "account":      "CMRemix",
+    "account":      "SlimRemix",
     "repository":   "android_device_samsung_qcom-common",
     "target_path":  "device/samsung/qcom-common",
-    "revision":     "cm-12.1"
+    "revision":     "lp5.1"
   },
   {
-    "account":      "CMRemix",
+    "account":      "SlimRemix",
     "repository":   "proprietary_vendor_samsung",
     "target_path":  "vendor/samsung",
-    "revision":     "cm-12.1"
+    "revision":     "lp5.1"
   }
 ]

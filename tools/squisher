@@ -3,7 +3,7 @@
 # Squish a CM otapackage for distribution
 # cyanogen
 
-. $ANDROID_BUILD_TOP/vendor/cmremix/tools/colors
+. $ANDROID_BUILD_TOP/vendor/slimremix/tools/colors
 
 OUT_TARGET_HOST=`uname -s`
 if [ x"$OUT_TARGET_HOST" = x"Linux" ]
@@ -24,11 +24,11 @@ if [ -z "$OUT" -o ! -d "$OUT" ]; then
     exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/cmremix/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/slimremix/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
-# Fix LCD Density for cmRemiX
+# Fix LCD Density for SlimRemix
 DEVICELCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $OUT/system/build.prop`
 if [ "$DEVICELCD" = "240" ]; then
    sed -i 's/ro.sf.lcd_density=240/ro.sf.lcd_density=182/g' $OUT/system/build.prop
@@ -61,25 +61,25 @@ elif [ "$DEVICEID" = "togari" ]; then
 fi
 cp -f $OUT/system/build.prop $REPACK/ota/system/build.prop
 
-# Delete cmRemiX specific files
-if [ -f $ANDROID_BUILD_TOP/vendor/cmremix/tools/squisher.rm ]; then
-    for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/cmremix/tools/squisher.rm`; do
+# Delete SlimRemixspecific files
+if [ -f $ANDROID_BUILD_TOP/vendor/slimremix/tools/squisher.rm ]; then
+    for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/slimremix/tools/squisher.rm`; do
         rm -rf $OUT/$RM_FILE
     done
 fi
 
 # Delete target product specific files
-if [ -f $ANDROID_BUILD_TOP/vendor/cmremix/tools/$TARGET_PRODUCT-squisher.rm ]; then
-    for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/cmremix/tools/$TARGET_PRODUCT-squisher.rm`; do
+if [ -f $ANDROID_BUILD_TOP/vendor/slimremix/tools/$TARGET_PRODUCT-squisher.rm ]; then
+    for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/slimremix/tools/$TARGET_PRODUCT-squisher.rm`; do
         rm -rf $OUT/$RM_FILE
     done
 fi
 
 # Delete specific files for lower ram devices
 if [ "$CMREMIX_LOW_RAM_DEVICE" = "true" ]; then
-    if [ -f $ANDROID_BUILD_TOP/vendor/cmremix/tools/squisher-lrd.rm ]; then
+    if [ -f $ANDROID_BUILD_TOP/vendor/slimremix/tools/squisher-lrd.rm ]; then
         echo -e "${bldblu}This device is low-RAM"
-        for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/cmremix/tools/squisher-lrd.rm`; do
+        for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/slimremix/tools/squisher-lrd.rm`; do
             rm -rf $OUT/$RM_FILE
             echo -e "${cya} $RM_FILE"
         done

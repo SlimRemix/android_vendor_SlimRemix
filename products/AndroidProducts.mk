@@ -13,6 +13,6 @@
 # limitations under the License.
 #
 
-ifneq ($(filter cmremix_%,$(TARGET_PRODUCT)),)
+ifneq ($(filter slimremix_%,$(TARGET_PRODUCT)),)
 PRODUCT_MAKEFILES += $(LOCAL_DIR)/$(TARGET_PRODUCT).mk
 endif
