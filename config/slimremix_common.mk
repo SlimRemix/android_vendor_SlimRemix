@@ -1,3 +1,10 @@
+# SlimRemix Configuration
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/cmremix/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/cmremix/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # SlimRemix Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/slimremix/overlay/common
 
