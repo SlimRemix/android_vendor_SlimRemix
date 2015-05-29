@@ -3,17 +3,11 @@
 PRODUCT_PACKAGES += \
     OmniSwitch
 
-# CMRemixOTA
+# SlimRemixOTA
 PRODUCT_PACKAGES += \
-    SlimRemixOTA
+    SlimOTA
 
-# slim Apps
-PRODUCT_PACKAGES += \
-    SlimFileManager \
-    DashClock \
-    SlimLauncher
-
-# CMRemix Kernel Tweaker
+# SlimRemix Kernel Tweaker
 PRODUCT_PACKAGES += \
     KernelAdiutor \
     FloatingActionButton
