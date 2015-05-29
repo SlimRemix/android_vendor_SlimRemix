@@ -46,7 +46,7 @@ usage() {
     echo -e "        3 - Restore previous snapshot, then snapshot sync"
     echo -e "    -o# Only build:"
     echo -e "        1 - Boot Image"
-    echo -e "        1 - Boot Zip"
+    echo -e "        2 - Boot Zip"
     echo -e "        3 - Recovery Image"
     echo -e "    -p  Build using pipe"
     echo -e "    -w  Log file options:"
