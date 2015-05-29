@@ -2,8 +2,8 @@
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-    vendor/cmremix/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-    vendor/cmremix/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+    vendor/slimremix/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/slimremix/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # SlimRemix Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/slimremix/overlay/common
@@ -68,6 +68,7 @@ ifeq ($(DISABLE_ADB_AUTH),true)
 endif
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slimremix/tools/slimremix_process_props.py
+SQUISHER_SCRIPT := vendor/slimremix/tools/squisher
 
 # Inherite sabermod vendor
 SM_VENDOR := vendor/sm
