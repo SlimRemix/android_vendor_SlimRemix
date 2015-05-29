@@ -1,63 +1,43 @@
-#!/bin/bash
-# NUCLEARMISTAKE 2015
-#    STEP YOUR BASH UP, SON
-[ ! $ANDROID_BUILD_TOP ] && echo "ANDROID_BUILD_TOP not defined. source build/envsetup.sh before running $0" && exit 1
-mkdir -p $ANDROID_BUILD_TOP/CHANGELOGS/
-if [ $FORCE_BUILD_DATE ]; then
-  Y=${FORCE_BUILD_DATE:4:2}
-  M=${FORCE_BUILD_DATE:0:2}
-  D=${FORCE_BUILD_DATE:2:2}
-  export d=$Y$M$D
-  logd=$M$D$Y
+#!/bin/sh
+
+. $ANDROID_BUILD_TOP/vendor/slimremix/tools/colors
+
+CURRENT_DATE=`date +%Y%m%d`
+PREVIOUS_DATE=`date +%s -d "1 day ago"`
+LAST_DATE=`sed -n -e'/ro.build.date.utc/s/^.*=//p' $ANDROID_BUILD_TOP/last_build.prop`
+
+if [ -z "$LAST_DATE" ]; then
+    WORKING_DATE=${PREVIOUS_DATE}
 else
-  export d=`date +"%y%m%d"`
-  logd=`date +"%m%d%y"`
+    WORKING_DATE=${LAST_DATE}
 fi
-export CHANGELOGOUT=$ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd
-echo "" > $CHANGELOGOUT
-ln -sf $CHANGELOGOUT $ANDROID_BUILD_TOP/CHANGES.LOG
-getbranch()
-{
-  git --git-dir $REPOPATH/.repo/manifests.git config --local branch.default.merge
-}
-export version=`getbranch`
-export newversion=HEAD
-if [ $1 ]; then export lastversion=$1; fi
-if [ $2 ]; then export newversion=$2; fi
-repo forall -c 'bash <<'\''EOF'\''
-  remote=$REPO_REMOTE
 
-  if [ ! $lastversion ]; then
-    prev=`git tag | sort -uh | grep -x "[0-9][0-9]*" | grep -v "$d"  | tail -n 1`
-    if [ $prev ] && [ `echo $prev | wc -w` -eq 1 ]; then
-      lastversion="$prev"
-    elif [ `git tag | sort -uh | grep slimremix_ | wc -l` -gt 0 ]; then
-      lastversion="`git tag | sort -uh | grep slimremix_ | tail -n 1`"
-    else
-      lastversion=m/$version
+CHANGELOG=$OUT/system/etc/changelog.txt
+
+# Remove existing changelog
+file="$CHANGELOG"
+if [ -f "$file" ]; then
+    echo ${bldcya}"Removing existing ${CHANGELOG}"${rst}
+    rm $CHANGELOG;
+fi
+
+# Find the directories to log
+find $ANDROID_BUILD_TOP -name .git | sed 's/\/.git//g' | sed 'N;$!P;$!D;$d' | while read line
+do
+    cd $line
+    log=$(git log --pretty="%an - %s" --no-merges --since=$WORKING_DATE --date-order)
+    project=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
+    if [ ! -z "$log" ]; then
+        # Write the changelog
+        echo "Project name: $project" >> $CHANGELOG
+        echo "$log" | while read line
+        do
+             echo "  *$line" >> $CHANGELOG
+        done
+        echo "" >> $CHANGELOG
     fi
-  fi
-  echo "CHANGELOG for ${REPO_REMOTE}:${REPO_PROJECT} SINCE $lastversion... TAGGING $d"
-  if [ $lastversion ]; then
-      git log $lastversion..$newversion --no-merges --format="%h : %s <%an> %ar" > /tmp/currentlog
-  else
-      git log --no-merges --format="%h : %s <%an> %ar" > /tmp/currentlog
-  fi
+done
 
-  lines=`cat /tmp/currentlog | wc -l`
-  if [ $lines -gt 0 ]; then
-    project=${REPO_REMOTE}:${REPO_PROJECT}
-    echo "**** $project ****" | tee -a $CHANGELOGOUT
-    head -n 50 /tmp/currentlog | tee -a $CHANGELOGOUT
-    if [ $lines -gt 50 ]; then
-        echo "* ... `expr $lines - 50` lines truncated ... *"
-    fi
-    echo " " | tee -a $CHANGELOGOUT
-  fi
+cp $CHANGELOG $ANDROID_BUILD_TOP/Changelog_${CURRENT_DATE}.txt
 
-  git tag -d $d >& /dev/null
-  git tag $d
-EOF
-'
-cp $ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd $OUT/system/etc/CHANGELOG-cmR.txt
-cp $ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd $OUT/Changelog.txt
+exit 0

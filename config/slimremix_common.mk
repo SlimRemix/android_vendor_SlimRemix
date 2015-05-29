@@ -64,6 +64,7 @@ endif
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slimremix/tools/slimremix_process_props.py
 SQUISHER_SCRIPT := vendor/slimremix/tools/squisher
+CHANGELOG_SCRIPT := vendor/slimremix/tools/changelog.sh
 
 # Inherite sabermod vendor
 SM_VENDOR := vendor/sm

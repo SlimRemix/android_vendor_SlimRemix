@@ -412,6 +412,13 @@ else
     make -j$opt_jobs$opt_v$opt_i bacon
 fi
 
+if [ ! -z "$IS_RELEASED_BUILD" ]; then
+   BUILD_PROP=$OUT/system/build.prop
+   LAST_BUILD_PROP=$ANDROID_BUILD_TOP/last_build-$TARGET_DEVICE.prop
+   echo ${bldcya}"Copying '${BUILD_PROP}' to '${LAST_BUILD_PROP}'"${rst}
+   cp $BUILD_PROP $LAST_BUILD_PROP
+fi
+
 
 # Cleanup unused built
 rm -f "$OUTDIR"/target/product/"$device"/slim-*.*
