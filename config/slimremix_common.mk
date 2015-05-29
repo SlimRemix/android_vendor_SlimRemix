@@ -15,6 +15,11 @@ PRODUCT_COPY_FILES += vendor/slimremix/prebuilt/common/bootanimation/$(SLIMREMIX
 PRODUCT_COPY_FILES += \
 vendor/slimremix/prebuilt/common/etc/init.local.rc:root/init.slimremix.rc
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # easy way to extend to add more packages
 -include vendor/slimremix/extra/product.mk
 
