@@ -21,11 +21,6 @@ vendor/slimremix/prebuilt/common/etc/init.local.rc:root/init.slimremix.rc
 # Debugs Script
 -include vendor/slimremix/products/debug.mk
 
-# Chromium Prebuilt
-ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
--include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
-endif
-
 # SlimRemix version
 SLIMREMIXVERSION := $(shell echo $(SLIMREMIX_VERSION) | sed -e 's/^[ \t]*//;s/[ \t]*$$//;s/ /./g')
 BOARD := $(subst slimremix_,,$(TARGET_PRODUCT))
