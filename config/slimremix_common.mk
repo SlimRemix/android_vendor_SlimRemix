@@ -20,6 +20,12 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
+# SELinux
+BOARD_SEPOLICY_DIRS += vendor/slimremix/sepolicy
+BOARD_SEPOLICY_UNION += \
+    service_contexts \
+    system.te
+
 # easy way to extend to add more packages
 -include vendor/slimremix/extra/product.mk
 
