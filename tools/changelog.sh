@@ -39,5 +39,6 @@ do
 done
 
 cp $CHANGELOG $ANDROID_BUILD_TOP/Changelog_${CURRENT_DATE}.txt
+cp $CHANGELOG $ANDROID_BUILD_TOP/CHANGELOGS/Changelog_${CURRENT_DATE}.txt
 
 exit 0
