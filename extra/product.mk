@@ -12,6 +12,11 @@ PRODUCT_PACKAGES += \
     KernelAdiutor \
     FloatingActionButton
 
+# CameraNextMod
+PRODUCT_PACKAGES += \
+    CameraNextMod \
+    libjni_mosaic_next
+
 # Viper4Android
 PRODUCT_COPY_FILES += \
 vendor/slimremix/prebuilt/common/etc/viper/ViPER4Android.apk:system/app/ViPER4Android.apk
