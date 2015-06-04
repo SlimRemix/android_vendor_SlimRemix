@@ -14,8 +14,8 @@ PRODUCT_PACKAGES += \
 
 # CameraNextMod
 PRODUCT_PACKAGES += \
-    CameraNextMod \
-    libjni_mosaic_next
+    #CameraNextMod \
+    #libjni_mosaic_next
 
 # Viper4Android
 PRODUCT_COPY_FILES += \
