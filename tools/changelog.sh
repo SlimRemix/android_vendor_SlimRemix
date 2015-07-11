@@ -59,5 +59,5 @@ repo forall -c 'bash <<'\''EOF'\''
   git tag $d
 EOF
 '
-cp $ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd $OUT/system/etc/CHANGELOG-cmR.txt
+cp $ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd $OUT/system/etc/changelog.txt
 cp $ANDROID_BUILD_TOP/CHANGELOGS/slimremix_$logd $OUT/Changelog.txt

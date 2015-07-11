@@ -76,7 +76,7 @@ if [ -f $ANDROID_BUILD_TOP/vendor/slimremix/tools/$TARGET_PRODUCT-squisher.rm ];
 fi
 
 # Delete specific files for lower ram devices
-if [ "$CMREMIX_LOW_RAM_DEVICE" = "true" ]; then
+if [ "$SLIMREMIX_LOW_RAM_DEVICE" = "true" ]; then
     if [ -f $ANDROID_BUILD_TOP/vendor/slimremix/tools/squisher-lrd.rm ]; then
         echo -e "${bldblu}This device is low-RAM"
         for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/slimremix/tools/squisher-lrd.rm`; do
