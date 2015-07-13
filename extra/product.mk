@@ -5,7 +5,8 @@ PRODUCT_PACKAGES += \
 
 # SlimRemixOTA
 PRODUCT_PACKAGES += \
-    SlimOTA
+    SlimOTA \
+    SlimRemixUpdater
 
 # SlimRemix Kernel Tweaker
 PRODUCT_PACKAGES += \
