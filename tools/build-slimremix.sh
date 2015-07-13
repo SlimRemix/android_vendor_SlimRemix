@@ -80,6 +80,8 @@ if [ -z "${USE_CCACHE}" ]; then
     export USE_CCACHE=1
 fi
 
+# SlimRemix ChangeLog
+export BUILD_SLIMREMIX_CHANGELOG=true
 
 # Maintenance logic
 if [ -s ~/SLIMREMIXname ]; then
