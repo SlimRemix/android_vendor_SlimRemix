@@ -1,3 +1,5 @@
+# Motorola
+add_lunch_combo slimremix_shamu-userdebug
 # Samsung Galaxy Note3
 add_lunch_combo slimremix_hlte-userdebug
 add_lunch_combo slimremix_hltetmo-userdebug
