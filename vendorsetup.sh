@@ -1,13 +1,15 @@
 # Samsung Galaxy Note3
-add_lunch_combo cmremix_hlte-userdebug
-add_lunch_combo cmremix_hltetmo-userdebug
-add_lunch_combo cmremix_hltespr-userdebug
-add_lunch_combo cmremix_hltevzw-userdebug
-add_lunch_combo cmremix_hlteusc-userdebug
+add_lunch_combo slimremix_hlte-userdebug
+add_lunch_combo slimremix_hltetmo-userdebug
+add_lunch_combo slimremix_hltespr-userdebug
+add_lunch_combo slimremix_hltevzw-userdebug
+add_lunch_combo slimremix_hlteusc-userdebug
 # Samsung Galaxy Note4
-add_lunch_combo cmremix_trlteeur-userdebug
-add_lunch_combo cmremix_trltetmo-userdebug
-add_lunch_combo cmremix_trltespr-userdebug
-add_lunch_combo cmremix_trlteusc-userdebug
+add_lunch_combo slimremix_trlteeur-userdebug
+add_lunch_combo slimremix_trltetmo-userdebug
+add_lunch_combo slimremix_trltespr-userdebug
+add_lunch_combo slimremix_trlteusc-userdebug
 # Sony Xperia Z Ultra
-add_lunch_combo cmremix_togari-userdebug
+add_lunch_combo slimremix_togari-userdebug
+#Motorola
+add_lunch_combo slimremix_falcon-userdebug

@@ -1,0 +1,31 @@
+[
+    {
+        "remote": "github",
+        "account": "SlimRoms",
+        "repository": "device_motorola_falcon",
+        "target_path": "device/motorola/falcon",
+        "revision": "lp5.1"
+    },
+    {
+        "remote": "github",
+        "account": "SlimRoms",
+        "repository": "device_motorola_msm8226-common",
+        "target_path": "device/motorola/msm8226-common",
+        "revision": "lp5.1"
+    },
+    {
+        "remote": "github",
+        "account": "SlimRoms",
+        "repository": "kernel_motorola_msm8226",
+        "target_path": "kernel/motorola/msm8226",
+        "revision": "lp5.1"
+    },
+
+    {
+        "remote": "github",
+        "account": "TheMuppets",
+        "repository": "proprietary_vendor_motorola",
+        "target_path": "vendor/motorola",
+        "revision": "cm-12.1"
+    }
+]
