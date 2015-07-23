@@ -9,6 +9,10 @@ PRODUCT_PACKAGES += \
     SlimOTA \
     SlimRemixUpdater
 
+#Music Player
+PRODUCT_PACKAGES += \
+    Apollo
+
 # SlimRemix Kernel Tweaker
 PRODUCT_PACKAGES += \
     KernelAdiutor \
