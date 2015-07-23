@@ -40,3 +40,7 @@ vendor/slimremix/prebuilt/common/apk/MDNIE-tuner/MDNIE-tuner.apk:system/app/MDNI
 # OpenCamra
 PRODUCT_COPY_FILES += \
 vendor/slimremix/prebuilt/common/apk/OpenCamera/OpenCamera.apk:system/app/OpenCamera/OpenCamera.apk
+
+# Layers Manager
+PRODUCT_COPY_FILES += \
+vendor/slimremix/prebuilt/common/apk/layersmanager.apk:system/app/layersmanager.apk
