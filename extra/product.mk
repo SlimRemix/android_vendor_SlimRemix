@@ -1,7 +1,8 @@
 #################################
 ## SlimRemix Required Packages Apps
 PRODUCT_PACKAGES += \
-    OmniSwitch
+    OmniSwitch \
+    WallpaperPicker
 
 # SlimRemixOTA
 PRODUCT_PACKAGES += \
