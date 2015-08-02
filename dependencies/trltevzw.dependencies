@@ -7,8 +7,8 @@
   },
   {
     "account":      "SlimRemix",
-    "repository":   "android_device_samsung_trltexx",
-    "target_path":  "device/samsung/trltexx",
+    "repository":   "android_device_samsung_trltevzw",
+    "target_path":  "device/samsung/trltevzw",
     "revision":     "lp5.1"
   },
   {

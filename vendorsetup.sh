@@ -11,6 +11,7 @@ add_lunch_combo slimremix_trlteeur-userdebug
 add_lunch_combo slimremix_trltetmo-userdebug
 add_lunch_combo slimremix_trltespr-userdebug
 add_lunch_combo slimremix_trlteusc-userdebug
+add_lunch_combo slimremix_trltevzw-userdebug
 # Sony Xperia Z Ultra
 add_lunch_combo slimremix_togari-userdebug
 #Motorola
