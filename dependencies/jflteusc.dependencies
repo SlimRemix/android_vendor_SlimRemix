@@ -1,0 +1,37 @@
+[
+  {
+    "repository": "CyanogenMod/android_kernel_samsung_jf",
+    "target_path": "kernel/samsung/jf",
+    "branch": "cm-12.0"
+  },
+  {
+    "account":      "nicklovell23",
+    "repository":   "android_device_samsung_jflteusc",
+    "target_path":  "device/samsung/trlteusc",
+    "revision":     "lp5.1"
+  },
+  {
+    "account":      "nicklovell23",
+    "repository": "nicklovell23/device_samsung_jf-common",
+    "target_path": "device/samsung/jf-common",
+    "branch": "lp5.1"
+  },
+  {
+    "account":      "nicklovell23",
+    "repository":   "android_hardware_samsung",
+    "target_path":  "hardware/samsung",
+    "revision":     "lp5.1"
+  },
+  {
+    "account":      "SlimRemix",
+    "repository":   "android_device_samsung_qcom-common",
+    "target_path":  "device/samsung/qcom-common",
+    "revision":     "lp5.1"
+  },
+  {
+    "account":      "SlimRemix",
+    "repository":   "proprietary_vendor_samsung",
+    "target_path":  "vendor/samsung",
+    "revision":     "lp5.1"
+  }
+]
