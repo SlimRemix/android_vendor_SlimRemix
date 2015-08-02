@@ -2,7 +2,7 @@
   {
     "repository": "CyanogenMod/android_kernel_samsung_jf",
     "target_path": "kernel/samsung/jf",
-    "branch": "cm-12.0"
+    "branch": "cm-12.1"
   },
   {
     "account":      "nicklovell23",
