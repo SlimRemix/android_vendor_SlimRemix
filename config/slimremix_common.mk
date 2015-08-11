@@ -71,6 +71,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     dalvik.vm.image-dex2oat-filter=everything \
     dalvik.vm.dex2oat-filter=everything
 
+# Viper4Android Tweaks
+PRODUCT_PROPERTY_OVERRIDES += \
+    lpa.decode=false \
+    lpa.releaselock=false \
+    lpa.use-stagefright=false \
+    tunnel.decode=false
+
 # Inherite sabermod vendor
 SM_VENDOR := vendor/sm
 include $(SM_VENDOR)/Main.mk
