@@ -2,7 +2,6 @@
 ## SlimRemix Required Packages Apps
 PRODUCT_PACKAGES += \
     OmniSwitch \
-    WallpaperPicker \
     LockClock
 
 # SlimRemixOTA
