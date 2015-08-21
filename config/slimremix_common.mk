@@ -62,6 +62,15 @@ ifeq ($(DISABLE_ADB_AUTH),true)
         persist.sys.root_access=3
 endif
 
+# TWRP Recovery
+ifeq ($(RECOVERY_VARIANT),twrp)
+    ifeq ($(CMREMIX_MAKE),recoveryimage)
+        BOARD_SEPOLICY_IGNORE += external/sepolicy/domain.te
+        BOARD_SEPOLICY_DIRS += vendor/cmremix/sepolicy/twrp
+        BOARD_SEPOLICY_UNION += domain.te init.te recovery.te
+    endif
+endif
+
 EXTENDED_POST_PROCESS_PROPS := vendor/slimremix/tools/slimremix_process_props.py
 SQUISHER_SCRIPT := vendor/slimremix/tools/squisher
 

@@ -49,6 +49,8 @@ usage() {
     echo -e "        2 - Boot Zip"
     echo -e "        3 - Recovery Image"
     echo -e "    -p  Build using pipe"
+    echo -e "    -t  Build ROM with TWRP Recovery (Extreme caution, ONLY for developers)"
+    echo -e "        (This may produce an invalid recovery. Use only if you have the correct settings for these)"
     echo -e "    -w  Log file options:"
     echo -e "        1 - Send warnings and errors to a log file"
     echo -e "        2 - Send all output to a log file"
@@ -154,10 +156,11 @@ opt_only=0
 opt_pipe=0
 opt_reset=0
 opt_sync=0
+opt_twrp=0
 opt_log=0
 
 
-while getopts "ab:c:de:fj:kilo:prs:w:" opt; do
+while getopts "ab:c:de:fj:kilo:prs:tw:" opt; do
     case "$opt" in
     a) opt_adb=1 ;;
     b) opt_chromium="$OPTARG" ;;
@@ -173,6 +176,7 @@ while getopts "ab:c:de:fj:kilo:prs:w:" opt; do
     p) opt_pipe=1 ;;
     r) opt_reset=1 ;;
     s) opt_sync="$OPTARG" ;;
+    t) opt_twrp=1 ;;
     w) opt_log="$OPTARG" ;;
     *) usage
     esac
@@ -253,6 +257,16 @@ else
         echo -e "${bldcya}Output directory is: ${bldgrn}Clean${rst}"
         echo ""
     fi
+fi
+
+
+# TWRP Recovery
+if [ "$opt_twrp" -eq 1 ]; then
+    echo -e "${bldcya}TWRP Recovery will be built${rst}"
+    export RECOVERY_VARIANT=twrp
+    echo ""
+else
+    unset RECOVERY_VARIANT
 fi
 
 
@@ -396,6 +410,7 @@ fi
 
 
 # Start compilation
+unset CMREMIX_MAKE
 if [ "$opt_only" -eq 1 ]; then
     echo -e "${bldcya}Starting compilation: ${bldgrn}Building Kernel Boot Image only${rst}"
     echo ""
@@ -407,6 +422,7 @@ elif [ "$opt_only" -eq 2 ]; then
 elif [ "$opt_only" -eq 3 ]; then
     echo -e "${bldcya}Starting compilation: ${bldgrn}Building Recovery Image only${rst}"
     echo ""
+    export CMREMIX_MAKE=recoveryimage
     make -j$opt_jobs$opt_v$opt_i recoveryimage
 else
     echo -e "${bldcya}Starting compilation: ${bldgrn}Building ${bldylw}SLIMREMIX-ROM ${bldmag}$SLIMREMIX_VERSION_MAJOR ${bldcya}$SLIMREMIX_VERSION_MINOR ${bldred}$SLIMREMIX_MAINTENANCE${rst}"
