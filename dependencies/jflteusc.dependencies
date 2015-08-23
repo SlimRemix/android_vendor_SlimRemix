@@ -1,10 +1,5 @@
 [
   {
-    "repository":   "android_kernel_samsung_trlte",
-    "target_path":  "kernel/samsung/trlte",
-    "revision":     "lp5.1-ultimate"
-  },
-  {
     "account":      "SlimRemix",
     "repository":   "android_device_samsung_jflteusc",
     "target_path":  "device/samsung/jflteusc",
