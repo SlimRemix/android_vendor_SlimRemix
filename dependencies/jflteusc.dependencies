@@ -12,20 +12,14 @@
   },
   {
     "account":      "nicklovell23",
-    "repository": "nicklovell23/device_samsung_jf-common",
+    "repository": "android_device_samsung_jf-common",
     "target_path": "device/samsung/jf-common",
     "branch": "lp5.1"
   },
   {
-    "account":      "nicklovell23",
+    "account":      "SlimRemix",
     "repository":   "android_hardware_samsung",
     "target_path":  "hardware/samsung",
-    "revision":     "lp5.1"
-  },
-  {
-    "account":      "SlimRemix",
-    "repository":   "android_device_samsung_qcom-common",
-    "target_path":  "device/samsung/qcom-common",
     "revision":     "lp5.1"
   },
   {
