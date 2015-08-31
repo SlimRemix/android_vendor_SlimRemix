@@ -138,7 +138,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     lpa.use-stagefright=false \
     tunnel.decode=false
 
-ifneq ($(TARGET_ENABLE_UKM),true)
+ifeq ($(TARGET_ENABLE_UKM),true)
 -include vendor/slimremix/config/common_ukm.mk
 endif
 

@@ -1,6 +1,9 @@
 # Check for target product
 ifeq (slimremix_trltevzw,$(TARGET_PRODUCT))
 
+# Synapse 
+TARGET_ENABLE_UKM := true
+
 # Set bootanimation Size
 SLIMREMIX_BOOTANIMATION_NAME := 1600
 
