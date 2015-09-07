@@ -56,6 +56,10 @@ PRODUCT_COPY_FILES += \
     vendor/slimremix/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
     vendor/slimremix/prebuilt/etc/hosts.og:system/etc/hosts.og
 
+# WakeGestures
+PRODUCT_COPY_FILES += \
+vendor/slimremix/prebuilt/common/apk/WakeGestures.apk:system/app/WakeGestures.apk
+
 # SlimRemix Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/slimremix/overlay/common
 
