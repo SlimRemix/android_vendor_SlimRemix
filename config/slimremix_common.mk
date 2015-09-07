@@ -44,7 +44,7 @@ vendor/slimremix/prebuilt/common/apk/OpenCamera/OpenCamera.apk:system/app/OpenCa
 
 # Layers Manager
 PRODUCT_COPY_FILES += \
-vendor/slimremix/prebuilt/common/apk/layersmanager.apk:system/app/layersmanager.apk
+vendor/slimremix/prebuilt/common/apk/LayersManager/LayersManager.apk:system/app/LayersManager/LayersManager.apk
 
 # SuperSU
 PRODUCT_COPY_FILES += \
@@ -58,7 +58,7 @@ PRODUCT_COPY_FILES += \
 
 # WakeGestures
 PRODUCT_COPY_FILES += \
-vendor/slimremix/prebuilt/common/apk/WakeGestures.apk:system/app/WakeGestures.apk
+vendor/slimremix/prebuilt/common/apk/WakeGestures/WakeGestures.apk:system/app/WakeGestures/WakeGestures.apk
 
 # SlimRemix Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/slimremix/overlay/common
