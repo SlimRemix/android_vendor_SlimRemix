@@ -26,9 +26,10 @@ PRODUCT_PACKAGES += \
 
 # Viper4Android
 PRODUCT_COPY_FILES += \
-vendor/slimremix/prebuilt/common/apk/ViPER4Android/ViPER4Android_FX_A4.x/ViPER4Android_FX_A4.x.apk:system/app/ViPER4Android/ViPER4Android_FX_A4.x.apk
-vendor/slimremix/prebuilt/common/apk/ViPER4Android/addon.d/95-LolliViPER.sh:system/addon.d/95-LolliViPER.sh
-vendor/slimremix/prebuilt/common/apk/ViPER4Android/audio_policy.sh:system/audio_policy.sh
+    vendor/slimremix/prebuilt/common/addon.d/91-v4a.sh:system/addon.d/91-v4a.sh \
+    vendor/slimremix/prebuilt/common/priv-app/ViPER4Android_FX_A4.x/ViPER4Android_FX_A4.x.apk:system/priv-app/ViPER4Android_FX_A4/ViPER4Android_FX_A4.x.apk \
+    vendor/slimremix/prebuilt/common/priv-app/ViPER4Android_FX_A4.x/lib/arm/libV4AJniUtils.so:system/priv-app/ViPER4Android_FX_A4/lib/arm/libV4AJniUtils.so \
+    vendor/slimremix/prebuilt/common/etc/v4a.zip:system/addon.d/v4a.zip
 
 # KCAL - Advanced color control for Qualcomm MDSS 8x26/8974/8084
 PRODUCT_COPY_FILES += \
