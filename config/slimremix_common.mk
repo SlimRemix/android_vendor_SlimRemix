@@ -134,12 +134,6 @@ endif
 EXTENDED_POST_PROCESS_PROPS := vendor/slimremix/tools/slimremix_process_props.py
 SQUISHER_SCRIPT := vendor/slimremix/tools/squisher
 
-
-# SlimRemix Tweaks & optimization
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    dalvik.vm.image-dex2oat-filter=everything \
-    dalvik.vm.dex2oat-filter=everything
-
 # Viper4Android Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     lpa.decode=false \
