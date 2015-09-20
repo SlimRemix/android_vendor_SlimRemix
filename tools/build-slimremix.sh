@@ -66,7 +66,7 @@ usage() {
 
 # SlimRemix version
 export SLIMREMIX_VERSION_MAJOR="LP"
-export SLIMREMIX_VERSION_MINOR="MR10"
+export SLIMREMIX_VERSION_MINOR="MR18"
 export SLIMREMIX_VERSION_MAINTENANCE="Unofficial"
 # Acceptable maintenance versions are; Stable, Official, Nightly or Unofficial
 
