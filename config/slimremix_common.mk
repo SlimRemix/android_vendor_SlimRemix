@@ -60,10 +60,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 vendor/slimremix/prebuilt/common/apk/WakeGestures/WakeGestures.apk:system/app/WakeGestures/WakeGestures.apk
 
-# Synapse
-PRODUCT_COPY_FILES += \
-vendor/slimremix/prebuilt/common/apk/Synapse/Synapse.apk:system/app/Synapse/Synapse.apk
-
 # SlimRemix Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/slimremix/overlay/common
 
