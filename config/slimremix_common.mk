@@ -51,11 +51,6 @@ PRODUCT_COPY_FILES += \
     vendor/slimremix/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     vendor/slimremix/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# HFM Files
-PRODUCT_COPY_FILES += \
-    vendor/slimremix/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
-    vendor/slimremix/prebuilt/etc/hosts.og:system/etc/hosts.og
-
 # WakeGestures
 PRODUCT_COPY_FILES += \
 vendor/slimremix/prebuilt/common/apk/WakeGestures/WakeGestures.apk:system/app/WakeGestures/WakeGestures.apk
