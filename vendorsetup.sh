@@ -18,3 +18,5 @@ add_lunch_combo slimremix_jflteusc-userdebug
 add_lunch_combo slimremix_togari-userdebug
 #Motorola
 add_lunch_combo slimremix_falcon-userdebug
+# LGE G3
+add_lunch_combo slimremix_ls990-userdebug
