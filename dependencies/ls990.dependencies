@@ -12,12 +12,6 @@
     "revision":     "lp5.1"
   },
   {
-    "account":      "SlimRoms",
-    "repository":   "android_device_qcom_common",
-    "target_path":  "device/qcom/common",
-    "revision":     "lp5.1"
-  },
-  {
     "account":      "SlimRemix",
     "repository":   "proprietary_vendor_lge",
     "target_path":  "vendor/lge",
