@@ -8,7 +8,7 @@ TARGET_ENABLE_UKM := true
 DISABLE_ADB_AUTH := true
 
 # Set bootanimation Size
-SLIMREMIX_BOOTANIMATION_NAME := 1440
+SLIMREMIX_BOOTANIMATION_NAME := 1600
 
 # Include CM-Remix common configuration
 include vendor/slimremix/config/slimremix_common.mk
